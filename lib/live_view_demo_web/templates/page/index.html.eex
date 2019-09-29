@@ -1,6 +1,6 @@
 <section class="phx-hero">
-  <h1>My Phrenzy Entry</h1>
-  <p><%= link "This clock", to: Routes.live_path(@conn, LiveViewDemoWeb.ClockLive) %> is a basic live view in action.</p>
+  <h1>Phrenzy Entry - Tetris</h1>
+  <p><%= link "Click Here To Start Playing", to: Routes.page_path(@conn, :tetris) %> is tetris game.</p>
 </section>
 
 <section class="row">

@@ -1,0 +1,69 @@
+html{
+  overflow-x:hidden;
+}
+
+body.game {
+  background: #000000;
+}
+
+.tetris-controls *{
+  color: #ffffff;
+}
+
+.tetris-container{
+  width: 100%;
+  position: absolute;
+  color: #ffffff;
+}
+
+.game-over {
+  text-align: center;
+}
+
+.tetris-container h1{
+  width: 100%;
+}
+
+.tetris{
+  position: relative;
+  z-index: 999;
+}
+
+.tetris-container .block{
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.tetris-container .score{
+  color: #ffffff;
+  font-weight: bold;
+  position: absolute;
+  left: 2px;
+  top: -0.1em;
+  z-index: 3;
+}
+
+.tetris-container .block.field{
+  z-index: 2;
+	background: #FF8B33;
+	border-style: solid;
+	border-color: #33A7FF;
+	border-width: 1px;
+}
+.tetris-container .block.shape{
+  z-index: 2;
+	background: #33A7FF;
+	border-style: solid;
+	border-color: #FFA07A;
+	border-width: 1px;
+}
+
+.tetris-container .block.jar{
+  z-index: 2;
+	background: #909497;
+}
+
+.tetris-container .block.empty{
+  background: #000000;
+}
