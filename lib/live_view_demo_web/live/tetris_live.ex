@@ -5,7 +5,8 @@ defmodule LiveViewDemoWeb.TetrisLive do
   @width 26
   @field_delta_y 40
   @default_level 3
-  @default_height 22
+  @default_height 18
+  @default_width 12
 
   alias Tetris.Shape
 
@@ -22,36 +23,40 @@ defmodule LiveViewDemoWeb.TetrisLive do
 
   def render(assigns) do
     ~L"""
-    <div class="tetris-controls">
-
-    </div>
-    <div class="tetris-container" phx-keydown="keydown" phx-target="window">
-      <h3 class="score" style="font-size: 14px;">SCORE:&nbsp;<%= @score %></h3>
-      <%= for block <- @field_blocks do %>
-        <div class="block field"
-            style="left: <%= block.x %>px;
-                   top: <%= block.y %>px;
-                   width: <%= @width %>px;
-                   height: <%= @height %>px;
-        "></div>
-      <% end %>
-      <%= for block <- @shape_blocks do %>
-        <div class="block shape"
-            style="left: <%= block.x %>px;
-                   top: <%= block.y %>px;
-                   width: <%= @width %>px;
-                   height: <%= @height %>px;
-        "></div>
-      <% end %>
-      <%= for block <- @jar_blocks do %>
-        <div class="block jar"
-            style="left: <%= block.x %>px;
-                   top: <%= block.y %>px;
-                   width: <%= block.width %>px;
-                   height: <%= block.height %>px;
-        "></div>
-      <% end %>
-    </div>
+      <div class="tetris-container" phx-keydown="keydown" phx-target="window">
+        <h3 class="score" style="font-size: 14px;">
+          SCORE:&nbsp;<%= @score %>&nbsp;
+          Right - Right Arrow; &nbsp;
+          Left - Left Arrow; &nbsp;
+          CW - Arrow Up; &nbsp;
+          CCW - Arrow Down; &nbsp;
+          Pause/Restart - Escape; &nbsp;
+        </h3>
+        <%= for block <- @field_blocks do %>
+          <div class="block field"
+              style="left: <%= block.x %>px;
+                     top: <%= block.y %>px;
+                     width: <%= @width %>px;
+                     height: <%= @height %>px;
+          "></div>
+        <% end %>
+        <%= for block <- @shape_blocks do %>
+          <div class="block shape"
+              style="left: <%= block.x %>px;
+                     top: <%= block.y %>px;
+                     width: <%= @width %>px;
+                     height: <%= @height %>px;
+          "></div>
+        <% end %>
+        <%= for block <- @jar_blocks do %>
+          <div class="block jar"
+              style="left: <%= block.x %>px;
+                     top: <%= block.y %>px;
+                     width: <%= block.width %>px;
+                     height: <%= block.height %>px;
+          "></div>
+        <% end %>
+      </div>
     """
   end
 
@@ -139,17 +144,17 @@ defmodule LiveViewDemoWeb.TetrisLive do
       %{
         x: width * @width + 1,
         y: row * @height + delta_y,
-        height: @height,
+        height: @height + 1,
         width: 1
       }
     end
 
     b2 = for col <- 0..(width - 1) do
       %{
-        x: col * @width,
+        x: col * @width - 1,
         y: height * @height + delta_y,
         height: 2,
-        width: @width
+        width: @width + 3
       }
     end
 
@@ -196,7 +201,9 @@ defmodule LiveViewDemoWeb.TetrisLive do
           id: Tetris.GameController,
           start:
             {Tetris.GameController, :start_link,
-             [[state_change_listener: self(), level: @default_level, height: @default_height]]},
+             [[state_change_listener: self(), level: @default_level,
+               height: @default_height,
+               width: @default_width]]},
           restart: :temporary
         }
       )
