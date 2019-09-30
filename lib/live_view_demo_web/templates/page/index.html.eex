@@ -1,6 +1,6 @@
 <section class="phx-hero">
   <h1>Phrenzy Entry - Tetris</h1>
-  <p><%= link "Click Here To Start Playing", to: Routes.page_path(@conn, :tetris) %> is tetris game.</p>
+  <p><%= link "Click Here To Start Playing", to: Routes.page_path(@conn, :tetris) %></p>
 </section>
 
 <section class="row">
@@ -8,30 +8,10 @@
     <h2>Resources</h2>
     <ul>
       <li>
-        <a href="https://github.com/phoenixframework/phoenix_live_view">Phoenix LiveView README</a>
+        <a target="_blank" href="https://github.com/ashneyderman/live_view_demo">Source code for LiveView portion</a>
       </li>
       <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Phoenix Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Phoenix Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">Phoenix v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+        <a target="_blank" href="https://github.com/ashneyderman/extetris">Source code for engine that dirves the view</a>
       </li>
     </ul>
   </article>
