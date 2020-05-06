@@ -2,6 +2,8 @@
 
 This is my entry in [Phoenix Phrenzy](https://phoenixphrenzy.com), showing off what [Phoenix](https://phoenixframework.org/) and [LiveView](https://github.com/phoenixframework/phoenix_live_view) can do.
 
+The source code can be found at a particular sha - https://github.com/ashneyderman/live_view_demo/tree/64674e144c7d2f6a1f1d0232c2547892e1004cea
+
 # Live System
 
 A version of this system is running on gigalixir @ https://stormy-absolute-morpho.gigalixirapp.com/
